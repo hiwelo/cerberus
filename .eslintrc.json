@@ -12,6 +12,12 @@
       "jsx": true
     }
   },
+  "overrides": [{
+    "files": ["**/*.tsx", "**/*.ts"],
+    "rules": {
+      "react/prop-types": "off"
+    }
+  }],
   "settings": {
     "react": {
       "version": "detect"

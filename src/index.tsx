@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App, BaseStyles } from './components';
+import { ApiProvider } from './contexts';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <BaseStyles>
-    <App />
-  </BaseStyles>,
+  <ApiProvider>
+    <BaseStyles>
+      <App />
+    </BaseStyles>
+  </ApiProvider>,
   document.getElementById('root'),
 );
 

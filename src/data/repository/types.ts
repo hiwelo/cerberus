@@ -4,7 +4,7 @@ type Commit = {
   abbreviatedOid: string;
   /** The pull requests associated with a commit */
   associatedPullRequests: {
-    edges: PullRequest[];
+    edges: PullRequestEdge[];
   };
   /** The Git commit message */
   message: string;
@@ -75,8 +75,23 @@ type PullRequest = {
   url: URI;
 };
 
+type PullRequestEdge = {
+  __typename: 'PullRequestEdge';
+  node: PullRequest;
+};
+
 /** An RFC 3986, RFC 3987, and RFC 6570 (level 4) compliant URI string */
 type URI = string;
+
+/** Represents an object which can take actions on GitHub */
+export interface Actor {
+  /** A URL pointing to the actor's public avatar */
+  avatarUrl: URI;
+  /** The username of the actor */
+  login: string;
+  /** The HTTP URL for this actor */
+  url: URI;
+}
 
 /** Represents triggered deployment instance */
 export interface Deployment {
@@ -100,21 +115,16 @@ export interface Deployment {
   updatedAt: DateTime;
 }
 
-/** Represents an object which can take actions on GitHub */
-export interface Actor {
-  /** A URL pointing to the actor's public avatar */
-  avatarUrl: URI;
-  /** The username of the actor */
-  login: string;
-  /** The HTTP URL for this actor */
-  url: URI;
+export interface DeploymentEdge {
+  __typename: 'DeploymentEdge';
+  node: Deployment;
 }
 
 /** Repository used for this current Ceberus page */
 export interface Repository {
   /** Deployments associated with the repository */
   deployments: {
-    edges: Deployment[];
+    edges: DeploymentEdge[];
   };
   /** Description of the repository */
   description: string;

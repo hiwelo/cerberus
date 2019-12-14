@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { RepositoryData, RepositoryQueryVars } from '../data/repository/types';
-import { RepositoryInfo, DeploymentList } from '../components';
+import { RepositoryInfo, DeploymentList, PullRequestList } from '../components';
 import { useRepository } from '../contexts';
 import { repositoryQuery } from '../data';
 
@@ -25,11 +25,12 @@ const MainView: FunctionComponent = () => {
 
   // gets a series of information from the GitHub API query
   const { repository } = data;
-  const { deployments } = repository;
+  const { deployments, pullRequests } = repository;
 
   return (
     <>
       <RepositoryInfo repository={repository} />
+      <PullRequestList list={pullRequests} />
       <DeploymentList deployments={deployments.edges} />
     </>
   );

@@ -69,28 +69,6 @@ type DeploymentStatusState =
   | 'QUEUED' // The deployment is queued
   | 'IN_PROGRESS'; // The deployment is in progress
 
-/** A repository pull request */
-type PullRequest = {
-  /** The actor who authored the comment */
-  author: Actor;
-  /** true if the pull request is closed */
-  closed: boolean;
-  /** true if the pull request is locked */
-  locked: boolean;
-  /** Whether or not the pull request was merged */
-  merged: boolean;
-  /** Identifies the pull request number */
-  number: number;
-  /** The permalink to the pull request */
-  permalink: URI;
-  /** Identifies the pull request title */
-  title: string;
-  /** The HTTP URL for this pull request */
-  url: URI;
-  /** A list of commits present in this pull request's head branch not present in the base branch */
-  commits?: CommitConnection;
-};
-
 type PullRequestEdge = {
   __typename: 'PullRequestEdge';
   node: PullRequest;
@@ -136,6 +114,33 @@ export interface DeploymentEdge {
   node: Deployment;
 }
 
+/** A repository pull request */
+export interface PullRequest {
+  /** The actor who authored the comment */
+  author: Actor;
+  /** true if the pull request is closed */
+  closed: boolean;
+  /** true if the pull request is locked */
+  locked: boolean;
+  /** Whether or not the pull request was merged */
+  merged: boolean;
+  /** Identifies the pull request number */
+  number: number;
+  /** The permalink to the pull request */
+  permalink: URI;
+  /** Identifies the pull request title */
+  title: string;
+  /** The HTTP URL for this pull request */
+  url: URI;
+  /** A list of commits present in this pull request's head branch not present in the base branch */
+  commits?: CommitConnection;
+}
+
+/** The connection type for PullRequest */
+export interface PullRequestConnection {
+  edges: PullRequestEdge[];
+}
+
 /** Repository used for this current Ceberus page */
 export interface Repository {
   /** Deployments associated with the repository */
@@ -150,6 +155,8 @@ export interface Repository {
   name: string;
   /** User owner of the repository */
   owner: Actor;
+  /** A list of pull requests that have been opened in the repository */
+  pullRequests: PullRequestConnection;
   /** HTTP URL for this repository */
   url: string;
 }
@@ -168,4 +175,6 @@ export interface RepositoryQueryVars {
   owner: string;
   /** Number of deployment to display */
   count: number;
+  /** Number of open pull requests to display */
+  countPR: number;
 }

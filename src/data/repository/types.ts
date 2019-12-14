@@ -2,10 +2,6 @@
 type Commit = {
   /** An abbreviated version of the Git object ID */
   abbreviatedOid: string;
-  /** The pull requests associated with a commit */
-  associatedPullRequests: {
-    edges: PullRequestEdge[];
-  };
   /** The Git commit message */
   message: string;
   /** The Git commit message body */
@@ -14,6 +10,24 @@ type Commit = {
   messageHeadline: string;
   /** The Git object ID */
   oid: string;
+  /** The pull requests associated with a commit */
+  associatedPullRequests?: {
+    edges: PullRequestEdge[];
+  };
+};
+
+/** The connection type for PullRequestCommit */
+type CommitConnection = {
+  /** A list of edges */
+  edges: CommitEdge;
+};
+
+/** An edge in a connection */
+type CommitEdge = {
+  /** The item at the end of the edge */
+  node: {
+    commit: Commit;
+  };
 };
 
 /** An ISO-8601 encoded UTC date string */
@@ -73,6 +87,8 @@ type PullRequest = {
   title: string;
   /** The HTTP URL for this pull request */
   url: URI;
+  /** A list of commits present in this pull request's head branch not present in the base branch */
+  commits?: CommitConnection;
 };
 
 type PullRequestEdge = {
@@ -95,8 +111,6 @@ export interface Actor {
 
 /** Represents triggered deployment instance */
 export interface Deployment {
-  /** Identifies the commit sha of the deployment */
-  commit: Commit;
   /** Identifies the oid of the deployment commit, even if the commit has been deleted */
   commitOid: string;
   /** Identifies the actor who triggered the deployment */
@@ -113,6 +127,8 @@ export interface Deployment {
   task: string;
   /** Identifies the date and time when the object was last updated */
   updatedAt: DateTime;
+  /** Identifies the commit sha of the deployment */
+  commit?: Commit;
 }
 
 export interface DeploymentEdge {

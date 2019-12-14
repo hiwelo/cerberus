@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BaseStyles } from './components';
-import { ApiProvider } from './contexts';
+import { ApiProvider, RepositoryProvider } from './contexts';
 import { MainView } from './views';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <ApiProvider>
-    <BaseStyles>
-      <MainView />
-    </BaseStyles>
+    <RepositoryProvider>
+      <BaseStyles>
+        <MainView />
+      </BaseStyles>
+    </RepositoryProvider>
   </ApiProvider>,
   document.getElementById('root'),
 );

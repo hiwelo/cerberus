@@ -12,7 +12,7 @@ export const RepositoryProvider: FunctionComponent = ({ children }) => {
   if (!providedRepository) throw new Error(REPO_ERROR_MSG);
 
   // Name and owner of the repository, extracted from the provided repository identifier
-  const [repoName, repoOwner] = providedRepository.split('/', 2);
+  const [repoOwner, repoName] = providedRepository.split('/', 2);
 
   // early-termination if we can't identify a name and owner from the provided repository info
   if (!repoName || !repoOwner) throw new Error(REPO_ERROR_MSG);

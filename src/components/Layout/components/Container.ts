@@ -5,6 +5,6 @@ export default styled.div`
   max-width: 64rem;
   padding: 1.6rem;
   width: 80%;
-  background-color: #e9e7e9;
+  background-color: #fafaff;
   border-radius: 0.8rem;
 `;

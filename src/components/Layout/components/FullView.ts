@@ -5,6 +5,6 @@ export default styled.div`
   min-height: 100vh;
   padding: 8vh;
   width: 100vw;
-  background-color: #00798c;
+  background-color: #8ab0ab;
   box-sizing: border-box;
 `;

@@ -6,6 +6,7 @@ import {
   Layout,
   RepositoryInfo,
   PullRequestList,
+  Header,
 } from '../components';
 import { useRepository } from '../contexts';
 import { repositoryQuery } from '../data';
@@ -34,6 +35,7 @@ const MainView: FunctionComponent = () => {
 
   return (
     <Layout>
+      <Header />
       <RepositoryInfo repository={repository} />
       <PullRequestList list={pullRequests} />
       <DeploymentList list={deployments} />

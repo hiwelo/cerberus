@@ -1,7 +1,12 @@
 import React, { FunctionComponent } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { RepositoryData, RepositoryQueryVars } from '../data/repository/types';
-import { RepositoryInfo, DeploymentList, PullRequestList } from '../components';
+import {
+  DeploymentList,
+  Layout,
+  RepositoryInfo,
+  PullRequestList,
+} from '../components';
 import { useRepository } from '../contexts';
 import { repositoryQuery } from '../data';
 
@@ -28,11 +33,11 @@ const MainView: FunctionComponent = () => {
   const { deployments, pullRequests } = repository;
 
   return (
-    <>
+    <Layout>
       <RepositoryInfo repository={repository} />
       <PullRequestList list={pullRequests} />
       <DeploymentList list={deployments} />
-    </>
+    </Layout>
   );
 };
 

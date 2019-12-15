@@ -1,4 +1,4 @@
-import { PullRequestConnection } from '../../data/repository/types';
+import { PullRequestConnection } from '../../types/GitHubApi/PullRequest';
 
 export interface PullRequestListProps {
   /** List of deployments to display */

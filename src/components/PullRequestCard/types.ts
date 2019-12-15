@@ -1,4 +1,4 @@
-import { PullRequest } from '../../data/repository/types';
+import { PullRequest } from '../../types/GitHubApi/PullRequest';
 
 export interface PullRequestCardProps {
   item: PullRequest;

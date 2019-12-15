@@ -31,7 +31,7 @@ const MainView: FunctionComponent = () => {
     <>
       <RepositoryInfo repository={repository} />
       <PullRequestList list={pullRequests} />
-      <DeploymentList deployments={deployments.edges} />
+      <DeploymentList list={deployments} />
     </>
   );
 };

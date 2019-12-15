@@ -77,6 +77,7 @@ export default gql`
               login
               url
             }
+            bodyText
             closed
             commits(last: 1) {
               edges {

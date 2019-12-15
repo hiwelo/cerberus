@@ -1,3 +1,4 @@
+import { DeploymentConnection } from './Deployment';
 import { PullRequestConnection } from './PullRequest';
 
 export interface Commit {
@@ -13,6 +14,8 @@ export interface Commit {
   oid: string;
   /** The pull requests associated with a commit */
   associatedPullRequests?: PullRequestConnection;
+  /** The deployments associated with a commit */
+  deployments?: DeploymentConnection;
 }
 
 /** The connection type for Commit */

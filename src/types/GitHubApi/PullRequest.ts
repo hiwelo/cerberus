@@ -6,6 +6,8 @@ import { URI } from './GitHubApi';
 export interface PullRequest {
   /** The actor who authored the comment */
   author: Actor;
+  /** The body rendered to text */
+  bodyText: string;
   /** true if the pull request is closed */
   closed: boolean;
   /** true if the pull request is locked */

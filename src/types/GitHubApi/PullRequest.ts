@@ -6,8 +6,6 @@ import { URI } from './GitHubApi';
 export interface PullRequest {
   /** The actor who authored the comment */
   author: Actor;
-  /** The body rendered to text */
-  bodyText: string;
   /** true if the pull request is closed */
   closed: boolean;
   /** true if the pull request is locked */
@@ -22,6 +20,8 @@ export interface PullRequest {
   title: string;
   /** The HTTP URL for this pull request */
   url: URI;
+  /** The body rendered to text */
+  bodyText?: string;
   /** A list of commits present in this pull request's head branch not present in the base branch */
   commits?: CommitConnection;
 }

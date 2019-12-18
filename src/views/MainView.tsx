@@ -9,7 +9,7 @@ import {
   Header,
 } from '../components';
 import { useRepository } from '../contexts';
-import { repositoryQuery } from '../data';
+import { GET_REPOSITORY_QUERY } from '../data';
 
 /**
  * Defines the content for the main view of the Cerberus application
@@ -19,7 +19,7 @@ const MainView: FunctionComponent = () => {
 
   // fetches all information about the repository
   const { loading, data } = useQuery<RepositoryData, RepositoryQueryVars>(
-    repositoryQuery,
+    GET_REPOSITORY_QUERY,
     { variables: repositoryQueryVars },
   );
 

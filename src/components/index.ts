@@ -11,3 +11,4 @@ export { PullRequestCard } from './PullRequestCard';
 export { PullRequestList } from './PullRequestList';
 export { RepositoryInfo } from './RepositoryInfo';
 export { Tabs } from './Tabs';
+export { TestProvider } from './TestProvider';

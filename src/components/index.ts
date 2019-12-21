@@ -1,6 +1,7 @@
 export { BaseStyles } from './BaseStyles';
 export { DeploymentCard } from './DeploymentCard';
 export { DeploymentList } from './DeploymentList';
+export { Environments } from './Environments';
 export { FontLoader } from './FontLoader';
 export { Header } from './Header';
 export { Heading } from './Heading';

@@ -1,12 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.dd`
-  margin-left: 0;
-  width: 100%;
+  margin: 0;
+  margin-right: 1.6rem;
   font-weight: 400;
-
-  &::after {
-    content: '';
-    clear: left;
-  }
 `;

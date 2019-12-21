@@ -4,7 +4,7 @@ export default styled.div(
   ({ theme }) => css`
     display: flex;
     min-height: 100vh;
-    padding: 8vh;
+    padding: 4vh;
     width: 100vw;
     background-color: ${theme.palette.tertiary};
     box-sizing: border-box;

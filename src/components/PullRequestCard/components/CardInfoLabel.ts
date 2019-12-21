@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export default styled.dt`
-  float: left;
-  padding-right: 0.85em;
+  margin-right: 0.4em;
   font-weight: 300;
 `;

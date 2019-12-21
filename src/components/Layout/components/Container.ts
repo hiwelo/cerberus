@@ -5,7 +5,7 @@ export default styled.div(
     margin: 0 auto;
     max-width: 64rem;
     padding: 1.6rem;
-    width: 80%;
+    width: 100%;
     background-color: ${theme.palette.muted};
     border-radius: 0.8rem;
   `,

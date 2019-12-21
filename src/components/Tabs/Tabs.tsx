@@ -20,14 +20,18 @@ export const Tabs: FunctionComponent<TabsProps> = ({ tabs }) => {
 
   /** Moves the focus to the tab content everytime the active element change */
   useEffect(() => {
-    // early-termination if there is no active element yet
-    if (!activePanel) return;
+    const panelElement = activePanel?.current;
 
     // early-termination if the active panel is not rendered yet
-    if (!activePanel.current) return;
+    if (!panelElement) return;
 
     // moves the focus to the active tab panel
-    activePanel.current.focus();
+    panelElement.focus();
+
+    // adds a blur event to remove the tabIndex from the DOM element
+    panelElement.addEventListener('blur', (): void => {
+      panelElement.removeAttribute('tabindex');
+    });
   }, [activePanel]);
 
   return (
@@ -54,7 +58,7 @@ export const Tabs: FunctionComponent<TabsProps> = ({ tabs }) => {
           id={`${key}-tab`}
           hidden={activePanel !== tabItem.refPanel ?? undefined}
           role="region"
-          tabIndex={0}
+          tabIndex={activePanel === tabItem.refPanel ? 0 : undefined}
           aria-labelledby={key}
         >
           {tabItem.content}

@@ -4,9 +4,9 @@ export default styled.li(
   ({ theme }) => css`
     position: relative;
     margin: 0 3.2rem 3.2rem;
-    padding: 0 0 3.2rem;
+    padding: 0 0 1.6rem;
 
-    &::after {
+    &:not(:last-of-type)::after {
       position: absolute;
       left: 0;
       right: 0;

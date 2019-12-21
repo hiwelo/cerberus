@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Link } from '..';
+import { StyledLink } from '..';
 import { PullRequestCardProps } from './types';
 import {
   Card,
@@ -22,15 +22,15 @@ export const PullRequestCard: FunctionComponent<PullRequestCardProps> = ({
       <CardInfoList>
         <CardInfoLabel>PR</CardInfoLabel>
         <CardInfoValue>
-          <Link href={item.url} target="_blank">
+          <StyledLink href={item.url} target="_blank">
             #{item.number}
-          </Link>
+          </StyledLink>
         </CardInfoValue>
         <CardInfoLabel>Author</CardInfoLabel>
         <CardInfoValue>
-          <Link href={item.author.url} target="_blank">
+          <StyledLink href={item.author.url} target="_blank">
             {item.author.login}
-          </Link>
+          </StyledLink>
         </CardInfoValue>
       </CardInfoList>
       <CardDeployments pullRequest={item} />

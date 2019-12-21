@@ -1,9 +1,12 @@
-import React, { FunctionComponent, AnchorHTMLAttributes } from 'react';
+import React, { FunctionComponent } from 'react';
 import { LinkMarkup } from './components';
+import { LinkProps } from './types';
 
-export const Link: FunctionComponent<AnchorHTMLAttributes<
-  HTMLAnchorElement
->> = ({ children, target, ...rest }) => {
+export const Link: FunctionComponent<LinkProps> = ({
+  children,
+  target,
+  ...rest
+}) => {
   return (
     <LinkMarkup
       rel={target === '_blank' ? 'noopener noreferrer' : undefined}

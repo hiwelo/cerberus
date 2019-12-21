@@ -14,7 +14,7 @@ export default styled.li(
       content: '';
       display: block;
       height: 0.4rem;
-      background: ${theme.palette.secondary};
+      background: ${theme.palette.tertiary};
       border-radius: 0.2rem;
     }
   `,

@@ -7,6 +7,7 @@ import {
   RepositoryInfo,
   PullRequestList,
   Header,
+  Tabs,
 } from '../components';
 import { useRepository } from '../contexts';
 import { repositoryQuery } from '../data';
@@ -37,8 +38,18 @@ const MainView: FunctionComponent = () => {
     <Layout>
       <Header />
       <RepositoryInfo repository={repository} />
-      <PullRequestList list={pullRequests} />
-      <DeploymentList list={deployments} />
+      <Tabs
+        tabs={{
+          pullRequests: {
+            content: <PullRequestList list={pullRequests} />,
+            label: 'Open pull requests',
+          },
+          deployments: {
+            content: <DeploymentList list={deployments} />,
+            label: 'Latest deployments',
+          },
+        }}
+      />
     </Layout>
   );
 };

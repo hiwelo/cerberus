@@ -1,10 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export default styled.div`
-  display: flex;
-  min-height: 100vh;
-  padding: 8vh;
-  width: 100vw;
-  background-color: #8ab0ab;
-  box-sizing: border-box;
-`;
+export default styled.div(
+  ({ theme }) => css`
+    display: flex;
+    min-height: 100vh;
+    padding: 8vh;
+    width: 100vw;
+    background-color: ${theme.palette.tertiary};
+    box-sizing: border-box;
+  `,
+);

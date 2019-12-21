@@ -1,3 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export default styled.a``;
+export default styled.a(
+  ({ theme }) => css`
+    color: ${theme.palette.primary};
+  `,
+);

@@ -1,10 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export default styled.div`
-  margin: 0 auto;
-  max-width: 64rem;
-  padding: 1.6rem;
-  width: 80%;
-  background-color: #fafaff;
-  border-radius: 0.8rem;
-`;
+export default styled.div(
+  ({ theme }) => css`
+    margin: 0 auto;
+    max-width: 64rem;
+    padding: 1.6rem;
+    width: 80%;
+    background-color: ${theme.palette.muted};
+    border-radius: 0.8rem;
+  `,
+);

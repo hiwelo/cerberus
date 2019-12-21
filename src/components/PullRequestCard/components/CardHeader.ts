@@ -1,3 +1,5 @@
 import styled from 'styled-components';
 
-export default styled.h3``;
+export default styled.header`
+  grid-area: cardTitle;
+`;

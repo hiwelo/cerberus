@@ -1,29 +1,29 @@
-import React, { FunctionComponent, Fragment } from 'react';
+import React, { FunctionComponent } from 'react';
 import { Link } from '..';
 import { PullRequestCardProps } from './types';
 import {
   Card,
   CardContent,
   CardHeader,
-  CardHeaderSuffix,
   CardInfoLabel,
   CardInfoList,
   CardInfoValue,
+  CardLink,
+  CardTitle,
 } from './components';
 
 export const PullRequestCard: FunctionComponent<PullRequestCardProps> = ({
   item,
 }) => {
   return (
-    <>
-      <Card>
-        <CardHeader>
-          <Link href={item.url} target="_blank">
-            {item.title}
-            <CardHeaderSuffix>#{item.number}</CardHeaderSuffix>
-          </Link>
-        </CardHeader>
-        <CardContent>{item.bodyText.slice(0, 140)}…</CardContent>
+    <Card>
+      <CardHeader>
+        <CardTitle>{item.title}</CardTitle>
+        <CardLink href={item.url} target="_blank">
+          #{item.number}
+        </CardLink>
+      </CardHeader>
+      <CardContent>
         <CardInfoList>
           <CardInfoLabel>Author</CardInfoLabel>
           <CardInfoValue>
@@ -32,21 +32,8 @@ export const PullRequestCard: FunctionComponent<PullRequestCardProps> = ({
             </Link>
           </CardInfoValue>
           <CardInfoLabel>Deployments</CardInfoLabel>
-          {item.commits?.edges.map(({ node }) => {
-            const { commit } = node;
-
-            return commit.deployments?.edges.map(({ node }, index) => (
-              <Fragment key={`${node.commitOid}-${index}`}>
-                <CardInfoValue>
-                  <Link href={node.latestStatus.environmentUrl} target="_blank">
-                    {node.description}
-                  </Link>
-                </CardInfoValue>
-              </Fragment>
-            ));
-          })}
         </CardInfoList>
-      </Card>
-    </>
+      </CardContent>
+    </Card>
   );
 };

@@ -5,3 +5,5 @@ export { default as CardContent } from './CardContent';
 export { default as CardInfoLabel } from './CardInfoLabel';
 export { default as CardInfoList } from './CardInfoList';
 export { default as CardInfoValue } from './CardInfoValue';
+export { default as CardLink } from './CardLink';
+export { default as CardTitle } from './CardTitle';

@@ -11,6 +11,19 @@ export default styled.button(
     font-size: 1.8rem;
     font-weight: 350;
 
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus,
+    &:hover {
+      font-weight: 650;
+    }
+
     &::after {
       position: absolute;
       left: 0;

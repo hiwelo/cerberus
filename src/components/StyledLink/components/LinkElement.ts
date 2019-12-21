@@ -18,6 +18,10 @@ export default styled(Link)(
       border-radius: 0.4rem;
     }
 
+    &:focus {
+      outline: none;
+    }
+
     &:focus,
     &:hover {
       &::before {

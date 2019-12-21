@@ -5,5 +5,9 @@ export default styled.a(
     position: relative;
     color: ${theme.palette.primary};
     font-weight: 500;
+
+    &:focus {
+      outline: none;
+    }
   `,
 );

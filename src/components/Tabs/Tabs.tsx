@@ -1,44 +1,34 @@
-import React, {
-  FunctionComponent,
-  MouseEvent,
-  useEffect,
-  useState,
-} from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { Container, TabButton, TabList, TabPanel } from './components';
-import { TabsProps } from './types';
+import { Tab, TabsProps } from './types';
+import { createTabRefs } from './utilities';
 
+/**
+ * Provides a system of tabs matching the information provided as props
+ */
 export const Tabs: FunctionComponent<TabsProps> = ({ tabs }) => {
-  const tabList = Object.entries(tabs);
-  const [firstTabKey] = tabList[0];
-  const [active, setActive] = useState(firstTabKey);
-
-  /** Event callback updating the active tab and moving the focus to it */
-  const openTab = (event: MouseEvent<HTMLButtonElement>): void => {
-    const sourceElement = event.currentTarget;
-    const sourceId = sourceElement.id;
-
-    // updates the active element
-    setActive(sourceId);
-  };
+  /** Enriched list of tabs with a React Ref for its panel */
+  const tabListWithRefs = createTabRefs(tabs);
+  /** List of tabs to display (each tab is an array with first the key, and then an object with props) */
+  const tabList = Object.entries(tabListWithRefs);
+  /** Identifies the first tab for this component */
+  const firstTab = tabList[0][1];
+  // State keeping track of the active panel
+  const [activePanel, setActivePanel] = useState<Tab['refPanel']>(
+    firstTab.refPanel,
+  );
 
   /** Moves the focus to the tab content everytime the active element change */
   useEffect(() => {
-    const activeElement = document.querySelector<HTMLButtonElement>(
-      `#${active}`,
-    );
-    const controlledTabElement = document.querySelector<HTMLDivElement>(
-      `#${activeElement?.getAttribute('aria-controls')}`,
-    );
+    // early-termination if there is no active element yet
+    if (!activePanel) return;
 
-    // early-termination if the activeElement is not yet rendered
-    if (!activeElement || !controlledTabElement) return;
+    // early-termination if the active panel is not rendered yet
+    if (!activePanel.current) return;
 
-    // early-termination if the activeElement is not the currently focused element
-    if (document.activeElement !== activeElement) return;
-
-    // moves the focus to the controlled tab
-    controlledTabElement?.focus();
-  }, [active]);
+    // moves the focus to the active tab panel
+    activePanel.current.focus();
+  }, [activePanel]);
 
   return (
     <Container>
@@ -48,8 +38,10 @@ export const Tabs: FunctionComponent<TabsProps> = ({ tabs }) => {
             key={key}
             id={key}
             aria-controls={`${key}-tab`}
-            aria-expanded={active === key}
-            onClick={openTab}
+            aria-expanded={activePanel === tabItem.refPanel}
+            onClick={(): void => {
+              setActivePanel(tabItem.refPanel);
+            }}
           >
             {tabItem.label}
           </TabButton>
@@ -58,8 +50,9 @@ export const Tabs: FunctionComponent<TabsProps> = ({ tabs }) => {
       {tabList.map(([key, tabItem]) => (
         <TabPanel
           key={key}
+          ref={tabItem.refPanel}
           id={`${key}-tab`}
-          hidden={active !== key ?? undefined}
+          hidden={activePanel !== tabItem.refPanel ?? undefined}
           role="region"
           tabIndex={0}
           aria-labelledby={key}

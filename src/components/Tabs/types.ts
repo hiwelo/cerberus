@@ -1,15 +1,13 @@
 import { ReactNode, RefObject } from 'react';
 
 /** Defines a tab to display in a Tab list */
-type Tab = {
+export type Tab = {
   /** Label of the tab */
   label: string;
   /** Content of the tab */
   content: ReactNode;
-  /** React ref for the button */
-  refButton?: RefObject<undefined>;
   /** React ref for the tab panel */
-  refPanel?: RefObject<undefined>;
+  refPanel?: RefObject<HTMLDivElement>;
 };
 
 /** Collection of tabs */

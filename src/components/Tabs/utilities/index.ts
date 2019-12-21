@@ -1,0 +1,1 @@
+export { createTabRefs } from './createTabRefs';

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, Fragment } from 'react';
 import { Link } from '..';
 import { PullRequestCardProps } from './types';
 import {
@@ -35,22 +35,15 @@ export const PullRequestCard: FunctionComponent<PullRequestCardProps> = ({
           {item.commits?.edges.map(({ node }) => {
             const { commit } = node;
 
-            return (
-              <>
-                {commit.deployments?.edges.map(({ node }) => (
-                  <>
-                    <CardInfoValue>
-                      <Link
-                        href={node.latestStatus.environmentUrl}
-                        target="_blank"
-                      >
-                        {node.description}
-                      </Link>
-                    </CardInfoValue>
-                  </>
-                ))}
-              </>
-            );
+            return commit.deployments?.edges.map(({ node }, index) => (
+              <Fragment key={`${node.commitOid}-${index}`}>
+                <CardInfoValue>
+                  <Link href={node.latestStatus.environmentUrl} target="_blank">
+                    {node.description}
+                  </Link>
+                </CardInfoValue>
+              </Fragment>
+            ));
           })}
         </CardInfoList>
       </Card>

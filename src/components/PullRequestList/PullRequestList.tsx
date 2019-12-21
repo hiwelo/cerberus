@@ -1,17 +1,21 @@
 import React, { FunctionComponent } from 'react';
 import { PullRequestCard } from '../PullRequestCard';
+import { List, ListItem } from './components';
 import { PullRequestListProps } from './types';
 
 export const PullRequestList: FunctionComponent<PullRequestListProps> = ({
   list,
 }) => {
+  const pullRequestEdges = list.edges;
+  const pullRequestList = pullRequestEdges.map(edge => edge.node);
+
   return (
-    <ul>
-      {list.edges.map(pullRequest => (
-        <li key={pullRequest.node.number}>
-          <PullRequestCard item={pullRequest.node} />
-        </li>
+    <List>
+      {pullRequestList.map(pullRequest => (
+        <ListItem key={pullRequest.number}>
+          <PullRequestCard item={pullRequest} />
+        </ListItem>
       ))}
-    </ul>
+    </List>
   );
 };

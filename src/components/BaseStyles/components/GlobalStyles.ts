@@ -8,7 +8,8 @@ export default createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    color: 222222;
+    box-sizing: border-box;
+    color: #222222;
     font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;

@@ -9,7 +9,6 @@ export { Layout } from './Layout';
 export { Link } from './Link';
 export { PullRequestCard } from './PullRequestCard';
 export { PullRequestList } from './PullRequestList';
-export { RepositoryInfo } from './RepositoryInfo';
 export { StyledLink } from './StyledLink';
 export { Tabs } from './Tabs';
 export { TestProvider } from './TestProvider';

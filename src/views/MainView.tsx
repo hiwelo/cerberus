@@ -4,7 +4,6 @@ import { RepositoryData, RepositoryQueryVars } from '../data/repository/types';
 import {
   DeploymentList,
   Layout,
-  RepositoryInfo,
   PullRequestList,
   Header,
   Tabs,
@@ -36,8 +35,9 @@ const MainView: FunctionComponent = () => {
 
   return (
     <Layout>
-      <Header />
-      <RepositoryInfo repository={repository} />
+      <Header>
+        Deployments for {repository.owner.login}/{repository.name}
+      </Header>
       <Tabs
         tabs={{
           pullRequests: {

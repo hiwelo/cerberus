@@ -62,5 +62,8 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "resolutions": {
+    "serialize-javascript": "^2.1.1"
   }
 }

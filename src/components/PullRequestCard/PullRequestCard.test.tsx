@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import { mockedPullRequest } from '../../mocks';
 import { testA11y, testSnapshot } from '../../test-utilities';
-import { Environments } from '.';
+import { mockedPullRequest } from '../../mocks';
+import { PullRequestCard } from './PullRequestCard';
 
 const TestComponent: FunctionComponent = () => (
-  <Environments pullRequest={mockedPullRequest} />
+  <PullRequestCard item={mockedPullRequest} />
 );
 
-describe('Environments component', () => {
+describe('PullRequestCard', () => {
   testSnapshot(<TestComponent />);
   testA11y(<TestComponent />);
 });

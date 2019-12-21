@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Environments component should match the latest snapshot 1`] = `
+exports[`Environments component should match snapshot 1`] = `
 .c2 {
+  position: relative;
   color: #006e97;
+  font-weight: 500;
+}
+
+.c2:focus {
+  outline: none;
 }
 
 .c3 {

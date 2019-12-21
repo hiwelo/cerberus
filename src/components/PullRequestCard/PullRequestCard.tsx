@@ -31,7 +31,6 @@ export const PullRequestCard: FunctionComponent<PullRequestCardProps> = ({
               {item.author.login}
             </Link>
           </CardInfoValue>
-          <CardInfoLabel>Deployments</CardInfoLabel>
         </CardInfoList>
       </CardContent>
     </Card>

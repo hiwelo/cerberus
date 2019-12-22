@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { breakpoints } from '../../../utilities';
 
 export default styled.button(
   ({ theme }) => css`
@@ -42,12 +43,16 @@ export default styled.button(
         background-color: ${theme.palette.tertiary};
         border-radius: 0.6rem;
         box-shadow: 0 0rem 0.2rem rgba(0, 0, 0, 0.1);
-        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.035);
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.045);
         z-index: -1;
       }
 
       &[aria-expanded='false']::before {
-        transform: translateX(100%);
+        transform: translateY(100%);
+
+        @media (min-width: ${breakpoints.md}) {
+          transform: translateX(100%);
+        }
       }
     }
   `,

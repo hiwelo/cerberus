@@ -3,6 +3,7 @@ export { DeploymentCard } from './DeploymentCard';
 export { DeploymentList } from './DeploymentList';
 export { Environments } from './Environments';
 export { FontLoader } from './FontLoader';
+export { Footer } from './Footer';
 export { Header } from './Header';
 export { Heading } from './Heading';
 export { Layout } from './Layout';

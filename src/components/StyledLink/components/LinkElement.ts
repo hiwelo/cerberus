@@ -9,11 +9,11 @@ export default styled(Link)(
 
     &::before {
       position: absolute;
-      bottom: 0.1rem;
+      bottom: 0.1em;
       left: 0;
       right: 0;
       content: '';
-      height: 0.3rem;
+      height: 0.15em;
       background-color: ${theme.palette.secondary};
       border-radius: 0.4rem;
     }
@@ -26,7 +26,7 @@ export default styled(Link)(
     &:hover {
       &::before {
         background-color: ${theme.palette.tertiary};
-        bottom: 0rem;
+        bottom: 0;
       }
     }
 

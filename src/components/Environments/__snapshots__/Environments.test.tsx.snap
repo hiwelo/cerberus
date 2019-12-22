@@ -13,9 +13,9 @@ exports[`Environments component should match snapshot 1`] = `
 
 .c3 {
   display: inline-block;
-  padding: 0.8rem 1.6rem;
+  padding: 0.8rem 1.6rem 0.7rem;
   background-color: transparent;
-  border: 0.3rem solid #8ab0ab;
+  border: 0.3rem solid #006e97;
   border-radius: 0.8rem;
   color: #222222;
   font-weight: 500;
@@ -23,13 +23,14 @@ exports[`Environments component should match snapshot 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   text-transform: capitalize;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out,color 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out,color 0.2s ease-in-out;
 }
 
 .c3:focus,
 .c3:hover {
-  background-color: #8ab0ab;
+  background-color: #006e97;
+  color: #fafaff;
 }
 
 .c1 {

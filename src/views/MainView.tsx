@@ -1,4 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import { Helmet } from 'react-helmet';
+import { ThemeContext } from 'styled-components';
 import { useQuery } from '@apollo/react-hooks';
 import { RepositoryData, RepositoryQueryVars } from '../data/repository/types';
 import {
@@ -15,6 +17,7 @@ import { repositoryQuery } from '../data';
  * Defines the content for the main view of the Cerberus application
  */
 const MainView: FunctionComponent = () => {
+  const theme = useContext(ThemeContext);
   const repositoryQueryVars = useRepository();
 
   // fetches all information about the repository
@@ -33,24 +36,30 @@ const MainView: FunctionComponent = () => {
   const { repository } = data;
   const { deployments, pullRequests } = repository;
 
+  // prepares the title used for this view
+  const viewTitle = `Latest deployments for ${repository.owner.login}/${repository.name}`;
+
   return (
-    <Layout>
-      <Header>
-        Latest deployments for {repository.owner.login}/{repository.name}
-      </Header>
-      <Tabs
-        tabs={{
-          pullRequests: {
-            content: <PullRequestList list={pullRequests} />,
-            label: 'Open pull requests',
-          },
-          deployments: {
-            content: <DeploymentList list={deployments} />,
-            label: 'Latest deployments',
-          },
-        }}
-      />
-    </Layout>
+    <>
+      <Helmet title={`${viewTitle} by Cerberus`}>
+        <meta name="theme-color" content={theme.palette.tertiary} />
+      </Helmet>
+      <Layout>
+        <Header>{viewTitle}</Header>
+        <Tabs
+          tabs={{
+            pullRequests: {
+              content: <PullRequestList list={pullRequests} />,
+              label: 'Open pull requests',
+            },
+            deployments: {
+              content: <DeploymentList list={deployments} />,
+              label: 'Latest deployments',
+            },
+          }}
+        />
+      </Layout>
+    </>
   );
 };
 

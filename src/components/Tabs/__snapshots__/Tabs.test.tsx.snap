@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs should match snapshot 1`] = `
+.c1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.2rem 1.6rem;
+  background: none;
+  border: 0;
+  font-size: 1.8rem;
+  font-weight: 350;
+  -webkit-transition: font-weight 0.2s linear;
+  transition: font-weight 0.2s linear;
+  z-index: 1;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:hover {
+  cursor: pointer;
+}
+
+.c1:focus,
+.c1:hover {
+  font-weight: 600;
+}
+
+.c1[aria-expanded='true'] {
+  font-weight: 600;
+}
+
+.c1:first-of-type {
+  position: relative;
+}
+
+.c1:first-of-type::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: block;
+  content: '';
+  background-color: #8ab0ab;
+  border-radius: 0.6rem;
+  box-shadow: 0 0rem 0.2rem rgba(0,0,0,0.1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175,0.885,0.32,1.045);
+  -webkit-transition: transform 0.5s cubic-bezier(0.175,0.885,0.32,1.045);
+  transition: transform 0.5s cubic-bezier(0.175,0.885,0.32,1.045);
+  z-index: -1;
+}
+
+.c1:first-of-type[aria-expanded='false']::before {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0.4rem;
+  border: 0.3rem solid #8ab0ab;
+  border-radius: 1.2rem;
+  box-shadow: 0 0 0.1rem rgba(0,0,0,0.1) inset;
+  z-index: 0;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+@media (min-width:540px) {
+  .c1:first-of-type[aria-expanded='false']::before {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+@media (min-width:540px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+<div
+  class=""
+>
+  <div
+    class="c0"
+  >
+    <button
+      aria-controls="firstTab-tab"
+      aria-expanded="true"
+      class="c1"
+      id="firstTab"
+    >
+      First tab
+    </button>
+    <button
+      aria-controls="secondTab-tab"
+      aria-expanded="false"
+      class="c1"
+      id="secondTab"
+    >
+      Second tab
+    </button>
+  </div>
+  <div
+    aria-labelledby="firstTab"
+    class="c2"
+    id="firstTab-tab"
+    role="region"
+    tabindex="0"
+  >
+    <div>
+      Test panel 1
+    </div>
+  </div>
+  <div
+    aria-labelledby="secondTab"
+    class="c2"
+    hidden=""
+    id="secondTab-tab"
+    role="region"
+  >
+    <div>
+      Test panel 2
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledLink should match snapshot 1`] = `
+.c0 {
+  position: relative;
+  color: #006e97;
+  font-weight: 500;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c1 {
+  position: relative;
+  color: #222222;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1::before {
+  position: absolute;
+  bottom: 0.1em;
+  left: 0;
+  right: 0;
+  content: '';
+  height: 0.15em;
+  background-color: #e8c000;
+  border-radius: 0.4rem;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus::before,
+.c1:hover::before {
+  background-color: #8ab0ab;
+  bottom: 0;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .c1::before {
+    -webkit-transition: background-color 0.2s ease-in-out,bottom 0.1s ease-in-out;
+    transition: background-color 0.2s ease-in-out,bottom 0.1s ease-in-out;
+  }
+}
+
+<a
+  class="c0 c1"
+  href="#"
+>
+  Test
+</a>
+`;
+
+exports[`StyledLink should match snapshot: with target blank 1`] = `
+.c0 {
+  position: relative;
+  color: #006e97;
+  font-weight: 500;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c1 {
+  position: relative;
+  color: #222222;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1::before {
+  position: absolute;
+  bottom: 0.1em;
+  left: 0;
+  right: 0;
+  content: '';
+  height: 0.15em;
+  background-color: #e8c000;
+  border-radius: 0.4rem;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus::before,
+.c1:hover::before {
+  background-color: #8ab0ab;
+  bottom: 0;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .c1::before {
+    -webkit-transition: background-color 0.2s ease-in-out,bottom 0.1s ease-in-out;
+    transition: background-color 0.2s ease-in-out,bottom 0.1s ease-in-out;
+  }
+}
+
+<a
+  class="c0 c1"
+  href="#"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Test with target blank
+</a>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeploymentList should match snapshot 1`] = `
+<ul>
+  <li>
+    <span>
+      deploy
+    </span>
+  </li>
+</ul>
+`;

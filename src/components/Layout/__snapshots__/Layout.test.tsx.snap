@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should match snapshot 1`] = `
+.c3 {
+  position: relative;
+  color: #006e97;
+  font-weight: 500;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c5 {
+  position: relative;
+  color: #222222;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c5::before {
+  position: absolute;
+  bottom: 0.1em;
+  left: 0;
+  right: 0;
+  content: '';
+  height: 0.15em;
+  background-color: #e8c000;
+  border-radius: 0.4rem;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c5:focus::before,
+.c5:hover::before {
+  background-color: #8ab0ab;
+  bottom: 0;
+}
+
+.c2 {
+  margin: 1.6rem auto 0.8rem;
+  padding: 0 1.6rem;
+  font-size: 1rem;
+}
+
+.c2 .c4 {
+  color: #222222;
+}
+
+.c2 .c4::before {
+  background-color: currentColor;
+  height: 0.1em;
+}
+
+.c1 {
+  margin: 0 auto auto;
+  max-width: 54rem;
+  overflow-x: hidden;
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+  background-color: #fafaff;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.4rem 1.6rem rgba(0,0,0,0.15);
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 4vh;
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .c5::before {
+    -webkit-transition: background-color 0.2s ease-in-out,bottom 0.1s ease-in-out;
+    transition: background-color 0.2s ease-in-out,bottom 0.1s ease-in-out;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    Test
+  </div>
+  <footer
+    class="c2"
+  >
+    Provided by 
+    <a
+      class="c3 c4 c5"
+      href="https://github.com/hiwelo/cerberus"
+    >
+      Cerberus
+    </a>
+    , made with love by 
+    <a
+      class="c3 c4 c5"
+      href="https://github.com/hiwelo"
+    >
+      hiwelo
+    </a>
+     in Rotterdam.
+  </footer>
+</div>
+`;

@@ -1,4 +1,4 @@
-import { Deployment } from '../types/GitHubApi/Deployment';
+import { Deployment, DeploymentConnection } from 'types/GitHubApi/Deployment';
 import { mockedActor } from './Actor';
 import { mockedCommit } from './Commit';
 
@@ -18,4 +18,13 @@ export const mockedDeployment: Deployment = {
   state: 'ACTIVE',
   task: 'deploy',
   updatedAt: '2019-12-20T20:11:45+00:00',
+};
+
+export const mockedDeploymentConnection: DeploymentConnection = {
+  edges: [
+    {
+      __typename: 'DeploymentEdge',
+      node: mockedDeployment,
+    },
+  ],
 };

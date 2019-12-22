@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should match snapshot 1`] = `
+.c0 {
+  position: relative;
+  color: #006e97;
+  font-weight: 500;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+<a
+  class="c0"
+  href="#"
+>
+  Test
+</a>
+`;
+
+exports[`Link should match snapshot: with target blank 1`] = `
+.c0 {
+  position: relative;
+  color: #006e97;
+  font-weight: 500;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+<a
+  class="c0"
+  href="#"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Test with target blank
+</a>
+`;

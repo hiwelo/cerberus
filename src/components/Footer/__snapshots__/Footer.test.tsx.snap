@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should match snapshot 1`] = `
+.c1 {
+  position: relative;
+  color: #006e97;
+  font-weight: 500;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c3 {
+  position: relative;
+  color: #222222;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3::before {
+  position: absolute;
+  bottom: 0.1em;
+  left: 0;
+  right: 0;
+  content: '';
+  height: 0.15em;
+  background-color: #e8c000;
+  border-radius: 0.4rem;
+}
+
+.c3:focus {
+  outline: none;
+}
+
+.c3:focus::before,
+.c3:hover::before {
+  background-color: #8ab0ab;
+  bottom: 0;
+}
+
+.c0 {
+  margin: 1.6rem auto 0.8rem;
+  padding: 0 1.6rem;
+  font-size: 1rem;
+}
+
+.c0 .c2 {
+  color: #222222;
+}
+
+.c0 .c2::before {
+  background-color: currentColor;
+  height: 0.1em;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .c3::before {
+    -webkit-transition: background-color 0.2s ease-in-out,bottom 0.1s ease-in-out;
+    transition: background-color 0.2s ease-in-out,bottom 0.1s ease-in-out;
+  }
+}
+
+<footer
+  class="c0"
+>
+  Provided by 
+  <a
+    class="c1 c2 c3"
+    href="https://github.com/hiwelo/cerberus"
+  >
+    Cerberus
+  </a>
+  , made with love by 
+  <a
+    class="c1 c2 c3"
+    href="https://github.com/hiwelo"
+  >
+    hiwelo
+  </a>
+   in Rotterdam.
+</footer>
+`;

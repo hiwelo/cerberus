@@ -4,5 +4,5 @@ import { DeploymentProps } from './types';
 export const DeploymentCard: FunctionComponent<DeploymentProps> = ({
   item,
 }) => {
-  return <>{item.task}</>;
+  return <span>{item.task}</span>;
 };

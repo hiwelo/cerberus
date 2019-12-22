@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading should match snapshot 1`] = `
+.c0 {
+  font-size: 2rem;
+  font-weight: 600;
+  -webkit-letter-spacing: -0.035em;
+  -moz-letter-spacing: -0.035em;
+  -ms-letter-spacing: -0.035em;
+  letter-spacing: -0.035em;
+  text-align: left;
+}
+
+<h1
+  class="c0"
+>
+  Test
+</h1>
+`;

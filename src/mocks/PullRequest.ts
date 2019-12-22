@@ -1,4 +1,7 @@
-import { PullRequest } from 'types/GitHubApi/PullRequest';
+import {
+  PullRequest,
+  PullRequestConnection,
+} from 'types/GitHubApi/PullRequest';
 import { mockedActor, mockedCommit, mockedDeployment } from '.';
 
 export const mockedPullRequest: PullRequest = {
@@ -30,4 +33,13 @@ export const mockedPullRequest: PullRequest = {
       },
     ],
   },
+};
+
+export const mockedPullRequestConnection: PullRequestConnection = {
+  edges: [
+    {
+      __typename: 'PullRequestEdge',
+      node: mockedPullRequest,
+    },
+  ],
 };

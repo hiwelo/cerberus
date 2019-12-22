@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import { TestProvider } from 'components';
 

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { ThemeProvider } from 'styled-components';
-import themes from '../../themes';
-import { FontLoader } from '../FontLoader';
+import { FontLoader } from 'components';
+import themes from 'themes';
 import { GlobalStyles } from './components';
 
 export const BaseStyles: FunctionComponent = ({ children }) => (

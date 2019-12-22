@@ -1,5 +1,5 @@
 import React, { FunctionComponent, StrictMode } from 'react';
-import { BaseStyles } from '../BaseStyles';
+import { BaseStyles } from 'components';
 
 /**
  * This component creates a series of context needed to run the tests of our

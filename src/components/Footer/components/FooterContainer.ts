@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { LinkElement } from '../../StyledLink/components';
+import { LinkElement } from 'components/StyledLink/components';
 
 export default styled.footer(
   ({ theme }) => css`

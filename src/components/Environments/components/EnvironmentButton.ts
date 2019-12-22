@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link } from '../../Link';
+import { Link } from 'components/Link';
 
 export default styled(Link)(
   ({ theme }) => css`

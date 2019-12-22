@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { StyledLink } from '..';
+import { StyledLink } from 'components';
 import { PullRequestCardProps } from './types';
 import {
   Card,

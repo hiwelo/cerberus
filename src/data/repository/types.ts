@@ -1,4 +1,4 @@
-import { Repository } from '../../types/GitHubApi/Repository';
+import { Repository } from 'types/GitHubApi/Repository';
 
 /** Result of the GraphQL query for the repository information */
 export interface RepositoryData {

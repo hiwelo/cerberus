@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Footer } from '../Footer';
+import { Footer } from 'components';
 import { Container, FullView } from './components';
 
 export const Layout: FunctionComponent = ({ children }) => (

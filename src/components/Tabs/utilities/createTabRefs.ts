@@ -1,5 +1,5 @@
-import { TabsProps } from '../types';
 import { useRef } from 'react';
+import { TabsProps } from '../types';
 
 /**
  * Creates a series of React Ref for each panel part of the Tabs defined for

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { PullRequest } from '../../types/GitHubApi/PullRequest';
-import { listNodesFromConnection } from '../../utilities';
+import { PullRequest } from 'types/GitHubApi/PullRequest';
+import { listNodesFromConnection } from 'utilities';
 import { Container, EnvironmentButton, Item, List } from './components';
 
 interface EnvironmentsProps {

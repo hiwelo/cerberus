@@ -1,4 +1,4 @@
-import { PullRequest } from '../types/GitHubApi/PullRequest';
+import { PullRequest } from 'types/GitHubApi/PullRequest';
 import { mockedActor, mockedCommit, mockedDeployment } from '.';
 
 export const mockedPullRequest: PullRequest = {

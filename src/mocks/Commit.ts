@@ -1,4 +1,4 @@
-import { Commit } from '../types/GitHubApi/Commit';
+import { Commit } from 'types/GitHubApi/Commit';
 
 /**
  * Mocked Commit object

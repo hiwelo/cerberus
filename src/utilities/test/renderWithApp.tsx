@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { render } from 'enzyme';
-import { TestProvider } from '../components';
+import { TestProvider } from 'components';
 
 /**
  * Returns the result of Enzyme's `render` method for the requested component

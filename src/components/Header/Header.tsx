@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Heading } from '..';
+import { Heading } from 'components';
 import { HeaderElement } from './components';
 
 export const Header: FunctionComponent = ({ children }) => (

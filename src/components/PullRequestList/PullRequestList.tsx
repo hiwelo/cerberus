@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { PullRequestCard } from '../PullRequestCard';
+import { PullRequestCard } from 'components';
 import { List, ListItem } from './components';
 import { PullRequestListProps } from './types';
 

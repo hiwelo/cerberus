@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { mockedPullRequest } from '../../mocks';
-import { testA11y, testSnapshot } from '../../test-utilities';
+import { testA11y, testSnapshot } from 'utilities/test';
+import { mockedPullRequest } from 'mocks';
 import { Environments } from '.';
 
 const TestComponent: FunctionComponent = () => (

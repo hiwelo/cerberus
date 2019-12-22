@@ -1,4 +1,4 @@
-import { Actor } from '../types/GitHubApi/Actor';
+import { Actor } from 'types/GitHubApi/Actor';
 
 /**
  * Mocked Actor object

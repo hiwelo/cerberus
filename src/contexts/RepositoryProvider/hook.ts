@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { RepositoryQueryVars } from '../../data/repository/types';
+import { RepositoryQueryVars } from 'data/repository/types';
 import { RepositoryContext } from '.';
 
 /** Returns the name and owner of the repository to use with Cerberus */

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { breakpoints } from '../../../utilities';
+import { breakpoints } from 'utilities';
 
 export default styled.div(
   ({ theme }) => css`

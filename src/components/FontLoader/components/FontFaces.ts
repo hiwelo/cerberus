@@ -1,8 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import {
-  FiraCodeVariableTrueType,
-  FiraCodeVariableWoff2,
-} from '../../../fonts';
+import { FiraCodeVariableTrueType, FiraCodeVariableWoff2 } from 'fonts';
 
 export default createGlobalStyle`
   @font-face {

@@ -1,5 +1,5 @@
-import { ThemePalette } from '../types/Theme/ThemePalette';
-import { Theme } from '../types/Theme/Theme';
+import { ThemePalette } from 'types/Theme/ThemePalette';
+import { Theme } from 'types/Theme/Theme';
 
 const palette: ThemePalette = {
   primary: '#006e97',

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
+import { DeploymentCard } from 'components';
 import { DeploymentListProps } from './types';
-import { DeploymentCard } from '../DeploymentCard';
 
 export const DeploymentList: FunctionComponent<DeploymentListProps> = ({
   list,

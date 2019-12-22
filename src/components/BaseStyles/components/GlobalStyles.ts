@@ -1,5 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
-import { breakpoints } from '../../../utilities';
+import { breakpoints } from 'utilities';
 
 export default createGlobalStyle(
   ({ theme }) => css`

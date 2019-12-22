@@ -2,16 +2,16 @@ import React, { FunctionComponent, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { ThemeContext } from 'styled-components';
 import { useQuery } from '@apollo/react-hooks';
-import { RepositoryData, RepositoryQueryVars } from '../data/repository/types';
+import { RepositoryData, RepositoryQueryVars } from 'data/repository/types';
 import {
   DeploymentList,
   Layout,
   PullRequestList,
   Header,
   Tabs,
-} from '../components';
-import { useRepository } from '../contexts';
-import { repositoryQuery } from '../data';
+} from 'components';
+import { useRepository } from 'contexts';
+import { repositoryQuery } from 'data';
 
 /**
  * Defines the content for the main view of the Cerberus application

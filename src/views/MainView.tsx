@@ -36,7 +36,7 @@ const MainView: FunctionComponent = () => {
   return (
     <Layout>
       <Header>
-        Deployments for {repository.owner.login}/{repository.name}
+        Latest deployments for {repository.owner.login}/{repository.name}
       </Header>
       <Tabs
         tabs={{

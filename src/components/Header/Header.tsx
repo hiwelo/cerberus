@@ -1,6 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { Heading } from '..';
+import { HeaderElement } from './components';
 
 export const Header: FunctionComponent = ({ children }) => (
-  <Heading>{children}</Heading>
+  <HeaderElement>
+    <Heading>{children}</Heading>
+  </HeaderElement>
 );

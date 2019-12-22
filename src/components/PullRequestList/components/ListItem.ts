@@ -3,8 +3,12 @@ import styled, { css } from 'styled-components';
 export default styled.li(
   ({ theme }) => css`
     position: relative;
-    margin: 0 3.2rem 3.2rem;
+    margin: 0 1.6rem 3.2rem;
     padding: 0 0 1.6rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
     &:not(:last-of-type)::after {
       position: absolute;

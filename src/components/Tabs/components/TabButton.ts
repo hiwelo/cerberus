@@ -2,14 +2,14 @@ import styled, { css } from 'styled-components';
 
 export default styled.button(
   ({ theme }) => css`
-    position: relative;
     flex: 1;
     padding: 1.2rem 1.6rem;
     background: none;
     border: 0;
-    border-bottom: 0.1rem solid ${theme.palette.primary};
     font-size: 1.8rem;
     font-weight: 350;
+    transition: font-weight 0.2s linear;
+    z-index: 1;
 
     &:focus {
       outline: none;
@@ -21,32 +21,33 @@ export default styled.button(
 
     &:focus,
     &:hover {
-      font-weight: 650;
-    }
-
-    &::after {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 100%;
-      content: '';
-      height: 0.1rem;
-      background: ${theme.palette.primary};
+      font-weight: 600;
     }
 
     &[aria-expanded='true'] {
-      font-weight: 650;
-
-      &::after {
-        height: 0.3rem;
-      }
+      font-weight: 600;
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-      transition: font-weight 0.3s ease-in-out;
+    &:first-of-type {
+      position: relative;
 
-      &::after {
-        transition: height 0.3s ease-in-out;
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        display: block;
+        content: '';
+        background-color: ${theme.palette.tertiary};
+        border-radius: 0.6rem;
+        box-shadow: 0 0rem 0.2rem rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.035);
+        z-index: -1;
+      }
+
+      &[aria-expanded='false']::before {
+        transform: translateX(100%);
       }
     }
   `,
